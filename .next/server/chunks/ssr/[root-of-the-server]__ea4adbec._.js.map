@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///home/ale/Escritorio/repos/E-Commerce-UI/client/src/app/components/ShoppingCartIcon.tsx"],"sourcesContent":["\"use client\";\n\n// import useCartStore from \"@/stores/cartStore\";\nimport { ShoppingCart } from \"lucide-react\";\nimport Link from \"next/link\";\n\nconst ShoppingCartIcon = () => {\n  //   const { cart, hasHydrated } = useCartStore();\n\n  //   if (!hasHydrated) return null;\n  return (\n    <Link href=\"/cart\" className=\"relative\">\n      <ShoppingCart className=\"w-4 h-4 text-gray-600\" />\n      <span className=\"absolute -top-3 -right-3 bg-amber-400 text-gray-600 rounded-full w-4 h-4 flex items-center justify-center text-xs font-medium\">\n        {/* {cart.reduce((acc, item) => acc + item.quantity, 0)} */}2\n      </span>\n    </Link>\n  );\n};\n\nexport default ShoppingCartIcon;\n"],"names":[],"mappings":";;;;AAEA,iDAAiD;AACjD;AACA;AAJA;;;;AAMA,MAAM,mBAAmB;IACvB,kDAAkD;IAElD,mCAAmC;IACnC,qBACE,6WAAC,2RAAA,CAAA,UAAI;QAAC,MAAK;QAAQ,WAAU;;0BAC3B,6WAAC,0SAAA,CAAA,eAAY;gBAAC,WAAU;;;;;;0BACxB,6WAAC;gBAAK,WAAU;0BAC8C;;;;;;;;;;;;AAIpE;uCAEe","debugId":null}}]
+}
