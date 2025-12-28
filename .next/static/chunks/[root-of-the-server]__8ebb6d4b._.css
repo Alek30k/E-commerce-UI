@@ -149,12 +149,8 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --color-red-100: #ffe2e2;
-    --color-red-200: #ffcaca;
-    --color-red-400: #ff6568;
     --color-amber-50: #fffbeb;
     --color-amber-400: #fcbb00;
-    --color-gray-50: #f9fafb;
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
     --color-gray-300: #d1d5dc;
@@ -190,12 +186,8 @@
 
   @supports (color: color(display-p3 0 0 0)) {
     :root, :host {
-      --color-red-100: color(display-p3 .980386 .889727 .887779);
-      --color-red-200: color(display-p3 .969562 .798149 .794299);
-      --color-red-400: color(display-p3 .933534 .431676 .423491);
       --color-amber-50: color(display-p3 .997804 .985047 .926312);
       --color-amber-400: color(display-p3 .959186 .738519 .118268);
-      --color-gray-50: color(display-p3 .977213 .98084 .985102);
       --color-gray-100: color(display-p3 .953567 .956796 .964321);
       --color-gray-200: color(display-p3 .899787 .906171 .92106);
       --color-gray-300: color(display-p3 .822033 .835264 .858521);
@@ -209,12 +201,8 @@
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-100: lab(92.243% 10.2865 3.83865);
-      --color-red-200: lab(86.017% 19.8815 7.75869);
-      --color-red-400: lab(63.7053% 60.745 31.3109);
       --color-amber-50: lab(98.6252% -.635922 8.42309);
       --color-amber-400: lab(80.1641% 16.6016 99.2089);
-      --color-gray-50: lab(98.2596% -.247031 -.706708);
       --color-gray-100: lab(96.1596% -.0823438 -1.13575);
       --color-gray-200: lab(91.6229% -.159115 -2.26791);
       --color-gray-300: lab(85.1236% -.612259 -3.7138);
@@ -648,14 +636,6 @@
     height: calc(var(--spacing) * 6);
   }
 
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
-
-  .h-32 {
-    height: calc(var(--spacing) * 32);
-  }
-
   .h-\[14px\] {
     height: 14px;
   }
@@ -674,14 +654,6 @@
 
   .w-6 {
     width: calc(var(--spacing) * 6);
-  }
-
-  .w-8 {
-    width: calc(var(--spacing) * 8);
-  }
-
-  .w-32 {
-    width: calc(var(--spacing) * 32);
   }
 
   .w-\[14px\] {
@@ -807,10 +779,6 @@
     background-color: var(--color-amber-400);
   }
 
-  .bg-gray-50 {
-    background-color: var(--color-gray-50);
-  }
-
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
@@ -823,16 +791,8 @@
     background-color: var(--color-gray-800);
   }
 
-  .bg-red-100 {
-    background-color: var(--color-red-100);
-  }
-
   .bg-white {
     background-color: var(--color-white);
-  }
-
-  .object-contain {
-    object-fit: contain;
   }
 
   .object-cover {
@@ -921,10 +881,6 @@
     color: var(--color-gray-800);
   }
 
-  .text-red-400 {
-    color: var(--color-red-400);
-  }
-
   .text-white {
     color: var(--color-white);
   }
@@ -996,12 +952,6 @@
   @media (hover: hover) {
     .hover\:bg-gray-900:hover {
       background-color: var(--color-gray-900);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-red-200:hover {
-      background-color: var(--color-red-200);
     }
   }
 
