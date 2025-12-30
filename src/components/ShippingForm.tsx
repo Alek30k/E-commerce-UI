@@ -22,10 +22,7 @@ const ShippingForm = ({
   };
 
   return (
-    <form
-      className="flex flex-col gap-4"
-      onSubmit={handleSubmit(handleShippingForm)}
-    >
+    <form className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
         <label htmlFor="name" className="text-xs text-gray-500 font-medium">
           Name
@@ -34,12 +31,7 @@ const ShippingForm = ({
           className="border-b border-gray-200 py-2 outline-none text-sm"
           type="text"
           id="name"
-          placeholder="John Doe"
-          {...register("name")}
         />
-        {errors.name && (
-          <p className="text-xs text-red-500">{errors.name.message}</p>
-        )}
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="email" className="text-xs text-gray-500 font-medium">
@@ -50,11 +42,7 @@ const ShippingForm = ({
           type="email"
           id="email"
           placeholder="johndoe@gmail.com"
-          {...register("email")}
         />
-        {errors.email && (
-          <p className="text-xs text-red-500">{errors.email.message}</p>
-        )}
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="phone" className="text-xs text-gray-500 font-medium">
@@ -65,11 +53,7 @@ const ShippingForm = ({
           type="text"
           id="phone"
           placeholder="123456789"
-          {...register("phone")}
         />
-        {errors.phone && (
-          <p className="text-xs text-red-500">{errors.phone.message}</p>
-        )}
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="address" className="text-xs text-gray-500 font-medium">
@@ -80,11 +64,7 @@ const ShippingForm = ({
           type="text"
           id="address"
           placeholder="123 Main St, Anytown"
-          {...register("address")}
         />
-        {errors.address && (
-          <p className="text-xs text-red-500">{errors.address.message}</p>
-        )}
       </div>
       <div className="flex flex-col gap-1">
         <label htmlFor="city" className="text-xs text-gray-500 font-medium">
@@ -95,11 +75,7 @@ const ShippingForm = ({
           type="text"
           id="city"
           placeholder="New York"
-          {...register("city")}
         />
-        {errors.city && (
-          <p className="text-xs text-red-500">{errors.city.message}</p>
-        )}
       </div>
       <button
         type="submit"
