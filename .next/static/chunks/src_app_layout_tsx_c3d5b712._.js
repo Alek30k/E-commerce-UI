@@ -2,8 +2,8 @@
     script: typeof document === "object" ? document.currentScript : undefined,
     chunks: [
   "static/chunks/[root-of-the-server]__8ebb6d4b._.css",
-  "static/chunks/node_modules__pnpm_22a4a68d._.js",
-  "static/chunks/src_components_ShoppingCartIcon_tsx_9d9b2753._.js"
+  "static/chunks/node_modules__pnpm_cf1121ce._.js",
+  "static/chunks/src_ae66a360._.js"
 ],
     source: "dynamic"
 });
