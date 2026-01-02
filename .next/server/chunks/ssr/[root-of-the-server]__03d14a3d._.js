@@ -44,12 +44,29 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zu
 ;
 const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])()((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["persist"])((set)=>({
         cart: [],
-        addToCart: (product)=>set((state)=>({
+        addToCart: (product)=>set((state)=>{
+                const existingProduct = state.cart.findIndex((p)=>p.id === product.id && p.selectedSize === product.selectedSize && p.selectedColor === product.selectedColor);
+                if (existingProduct !== -1) {
+                    const updatedCart = [
+                        ...state.cart
+                    ];
+                    updatedCart[existingProduct].quantity += product.quantity || 1;
+                    return {
+                        cart: updatedCart
+                    };
+                }
+                return {
                     cart: [
                         ...state.cart,
-                        product
+                        {
+                            ...product,
+                            quantity: 1,
+                            selectedSize: product.selectedSize,
+                            selectedColor: product.selectedColor
+                        }
                     ]
-                })),
+                };
+            }),
         removeFromCart: (product)=>set((state)=>({
                     cart: state.cart.filter((p)=>p.id !== product.id)
                 })),
