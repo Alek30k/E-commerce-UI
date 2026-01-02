@@ -39,8 +39,10 @@ __turbopack_context__.s({
     "default": ()=>__TURBOPACK__default__export__
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/zustand@5.0.9_@types+react@19.1.9_react@19.1.0/node_modules/zustand/esm/react.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/zustand@5.0.9_@types+react@19.1.9_react@19.1.0/node_modules/zustand/esm/middleware.mjs [app-ssr] (ecmascript)");
 ;
-const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])()((set)=>({
+;
+const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["create"])()((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["persist"])((set)=>({
         cart: [],
         addToCart: (product)=>set((state)=>({
                     cart: [
@@ -58,7 +60,10 @@ const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
         setHydrated: ()=>set({
                 hasHydrated: true
             })
-    }));
+    }), {
+    name: "cart",
+    storage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createJSONStorage"])(()=>localStorage)
+}));
 const __TURBOPACK__default__export__ = useCartStore;
 }),
 "[project]/src/components/ShoppingCartIcon.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
