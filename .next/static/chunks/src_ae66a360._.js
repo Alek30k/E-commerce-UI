@@ -14,6 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zu
 ;
 const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["create"])()((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["persist"])((set)=>({
         cart: [],
+        hasHydrated: false,
         addToCart: (product)=>set((state)=>{
                 const existingProduct = state.cart.findIndex((p)=>p.id === product.id && p.selectedSize === product.selectedSize && p.selectedColor === product.selectedColor);
                 if (existingProduct !== -1) {
@@ -38,18 +39,19 @@ const useCartStore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_mo
                 };
             }),
         removeFromCart: (product)=>set((state)=>({
-                    cart: state.cart.filter((p)=>p.id !== product.id)
+                    cart: state.cart.filter((p)=>!(p.id === product.id && p.selectedSize === product.selectedSize && p.selectedColor === product.selectedColor))
                 })),
         clearCart: ()=>set({
                 cart: []
-            }),
-        hasHydrated: false,
-        setHydrated: ()=>set({
-                hasHydrated: true
             })
     }), {
     name: "cart",
-    storage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createJSONStorage"])(()=>localStorage)
+    storage: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$zustand$40$5$2e$0$2e$9_$40$types$2b$react$40$19$2e$1$2e$9_react$40$19$2e$1$2e$0$2f$node_modules$2f$zustand$2f$esm$2f$middleware$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createJSONStorage"])(()=>localStorage),
+    onRehydrateStorage: ()=>(state)=>{
+            if (state) {
+                state.hasHydrated = true;
+            }
+        }
 }));
 const __TURBOPACK__default__export__ = useCartStore;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -77,7 +79,7 @@ var _s = __turbopack_context__.k.signature();
 const ShoppingCartIcon = ()=>{
     _s();
     const { cart, hasHydrated } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$stores$2f$cartStore$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
-    // if (!hasHydrated) return null;
+    if (!hasHydrated) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$5_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$5_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         href: "/cart",
         className: "relative",
@@ -91,7 +93,7 @@ const ShoppingCartIcon = ()=>{
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$5_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                 className: "absolute -top-3 -right-3 bg-amber-400 text-gray-600 rounded-full w-4 h-4 flex items-center justify-center text-xs font-medium",
-                children: cart.length
+                children: cart.reduce((acc, item)=>acc + item.quantity, 0)
             }, void 0, false, {
                 fileName: "[project]/src/components/ShoppingCartIcon.tsx",
                 lineNumber: 14,
