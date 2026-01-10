@@ -1,4 +1,3 @@
-// import ProductInteraction from "@/components/ProductInteraction";
 import ProductInteraction from "@/components/ProductInteraction";
 import { ProductType } from "@/types";
 import Image from "next/image";
